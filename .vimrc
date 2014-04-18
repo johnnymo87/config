@@ -1,5 +1,8 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
@@ -8,15 +11,21 @@ call vundle#rc()
 " let path = '~/some/path/here'
 " call vundle#rc(path)
 
-" let Vundle manage Vundle, required
+" Generic 
 Bundle 'gmarik/vundle'
-Bundle 'fatih/vim-go'
-
 Bundle 'scrooloose/nerdtree'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+
+" Go
+Bundle 'fatih/vim-go'
+
+" Ruby
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
+
+" JavaScript
+Bundle "pangloss/vim-javascript"
 
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.

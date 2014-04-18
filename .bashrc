@@ -131,3 +131,6 @@ export PATH=$PATH:$HOME/tools/hsandbox
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### For PhantomJS
+export PATH="/home/johnnymo87/tools/phantomjs/bin:$PATH"
