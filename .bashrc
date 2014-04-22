@@ -134,3 +134,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ### For PhantomJS
 export PATH="/home/johnnymo87/tools/phantomjs/bin:$PATH"
+
+### Calls for git branches, in order of most recent commit
+alias gitrecent="git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format='%(refname:short)'"

@@ -1,8 +1,5 @@
-set nocompatible      " We're running Vim, not Vi!
-syntax on             " Enable syntax highlighting
-filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/vundle/
@@ -16,6 +13,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'altercation/vim-colors-solarized'
 
 " Go
 Bundle 'fatih/vim-go'
@@ -26,6 +24,15 @@ Bundle 'tpope/vim-rails'
 
 " JavaScript
 Bundle "pangloss/vim-javascript"
+
+syntax enable         " For Solarized
+set background=dark   " ... 
+colorscheme solarized " ...
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
 
 " Some Linux distributions set filetype in /etc/vimrc.
 " Clear filetype flags before changing runtimepath to force Vim to reload them.
@@ -58,4 +65,13 @@ set shiftwidth=4
 set tabstop=4
 
 " Smaller indentation for ruby
-au FileType ruby set softtabstop=2 shiftwidth=2 expandtab 
+" au FileType ruby set softtabstop=2 shiftwidth=2 expandtab 
+
+" FuzzyFinder: Map Ctrl+T to :FufFile **/
+nnoremap <C-t> :<C-u>FufFile **/<CR>
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+ 
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
